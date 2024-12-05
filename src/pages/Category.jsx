@@ -3,18 +3,14 @@ import { useState, useEffect } from 'react';
 import characters from '../data/characters.json';
 import episodes from '../data/episode.json';
 import locations from '../data/location.json';
+import '../styles/Category.css';
 
-const categoryData = {
-  characters,
-  episodes,
-  locations,
-};
+const categoryData = { characters, episodes, locations };
 
 const Category = () => {
   const { category } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const sortOrder = searchParams.get('sort') || 'ASC';
-
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -28,11 +24,11 @@ const Category = () => {
   }, [category, sortOrder]);
 
   if (!categoryData[category]) {
-    return <p>Invalid category!</p>;
+    return <p className="error">Invalid category!</p>;
   }
 
   return (
-    <div>
+    <div className="category">
       <h2>{category}</h2>
       <button onClick={() => setSearchParams({ sort: 'ASC' })}>Sort ASC</button>
       <button onClick={() => setSearchParams({ sort: 'DESC' })}>Sort DESC</button>

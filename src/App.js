@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Category from './pages/Category';
 import Detail from './pages/Detail';
 import NotFound from './components/NotFound';
+import './styles/App.css'
 
 const App = () => (
   <Router>
