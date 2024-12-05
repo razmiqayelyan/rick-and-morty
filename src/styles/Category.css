@@ -1,0 +1,30 @@
+.category {
+    padding: 20px;
+  }
+  
+  .category h2 {
+    color: #61dafb;
+  }
+  
+  .category button {
+    margin: 5px;
+    padding: 8px 12px;
+    background-color: #61dafb;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .category button:hover {
+    background-color: #21a1f1;
+  }
+  
+  .category ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category li {
+    margin: 10px 0;
+  }
+  
