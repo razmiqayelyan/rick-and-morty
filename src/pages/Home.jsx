@@ -1,9 +1,8 @@
-import '../styles/Home.css';
-
+// pages/Home.jsx
 const Home = () => (
-  <div className="home">
+  <div>
     <h1>Welcome to the Rick and Morty App!</h1>
-    <p>Explore Characters, Locations, and Episodes.</p>
+    <p>Explore Characters, Locations, and Episodes after logging in!</p>
   </div>
 );
 

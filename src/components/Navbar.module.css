@@ -1,0 +1,17 @@
+.navbar {
+    background: #333;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+  }
+  

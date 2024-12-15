@@ -1,6 +1,8 @@
+// pages/Login.jsx
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import styles from './Login.module.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -12,35 +14,29 @@ const Login = () => {
     e.preventDefault();
     if (username && password) {
       login();
-      navigate('/'); // Перенаправление после успешного входа
+      navigate('/');
     }
   };
 
   return (
-    <div>
+    <div className={styles.loginContainer}>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Username:
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password:
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
-        </div>
-        <button type="submit">Login</button>
+      <form onSubmit={handleSubmit} className={styles.loginForm}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className={styles.input}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className={styles.input}
+        />
+        <button type="submit" className={styles.button}>Login</button>
       </form>
     </div>
   );

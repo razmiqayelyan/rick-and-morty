@@ -1,0 +1,13 @@
+.detailContainer {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+  }
+  
+  .detailTitle {
+    font-size: 1.5rem;
+    color: #ff5722;
+    margin-bottom: 1rem;
+  }
+  

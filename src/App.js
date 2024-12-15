@@ -1,38 +1,49 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Category from './pages/Category';
-import Detail from './pages/Detail';
-import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
-import NotFound from './components/NotFound';
+import ErrorBoundary from './components/ErrorBoundary';
+import styles from './App.module.css';
+
+
+const Home = lazy(() => import('./pages/Home'));
+const Category = lazy(() => import('./pages/Category'));
+const Detail = lazy(() => import('./pages/Detail'));
+const Login = lazy(() => import('./pages/Login'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const App = () => (
   <AuthProvider>
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/:category"
-          element={
-            <PrivateRoute>
-              <Category />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/:category/:id"
-          element={
-            <PrivateRoute>
-              <Detail />
-            </PrivateRoute>
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className={styles.container}>
+        <ErrorBoundary>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route 
+                path="/:category" 
+                element={
+                  <PrivateRoute>
+                    <Category />
+                  </PrivateRoute>
+                } 
+              />
+              <Route 
+                path="/:category/:id" 
+                element={
+                  <PrivateRoute>
+                    <Detail />
+                  </PrivateRoute>
+                } 
+              />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
+      </div>
     </Router>
   </AuthProvider>
 );
