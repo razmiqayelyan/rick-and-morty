@@ -1,0 +1,12 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fafafa;
+    min-height: calc(100vh - 60px); /* Adjust if Navbar height changes */
+  }
+  
+  .container h1 {
+    margin-top: 0;
+  }
+  

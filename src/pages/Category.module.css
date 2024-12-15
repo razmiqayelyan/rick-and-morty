@@ -1,0 +1,38 @@
+.category {
+    padding: 20px;
+  }
+  
+  .categoryTitle {
+    font-size: 1.8rem;
+    color: #3f51b5;
+    margin-bottom: 1rem;
+  }
+  
+  .sortButtons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sortButton {
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .sortButton:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .listItem {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
